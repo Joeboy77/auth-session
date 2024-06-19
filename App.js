@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 // Signup Endpoint
-app.post('/signup', async (req, res) => {  // Fix the route path here
+app.post('/signup', async (req, res) => {  
     const { username, password } = req.body;
     if (!username || !password) {
         return res.status(400).json({ message: "Username and password required" });
@@ -45,9 +45,9 @@ app.post('/signup', async (req, res) => {  // Fix the route path here
 });
 
 // Login Endpoint
-app.post('/login', async (req, res) => {  // Fix the route path here
+app.post('/login', async (req, res) => {  
     const { username, password } = req.body;
-    if (!username || !password) {  // Fix the condition here
+    if (!username || !password) {  
         return res.status(400).json({ message: 'Username and password required' });
     }
 
